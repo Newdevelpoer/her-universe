@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdf6ff">
+<title>Her Universe — Gallery</title>
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/gallery.css">
+<link rel="stylesheet" href="/css/upload.css">
+</head>
+<body>
+<canvas id="cursorCanvas"></canvas>
+<div id="cdot"></div><div id="cring"></div><div id="prog"></div>
+<div id="grain"></div><div id="bubblebg"></div>
+
+<div id="seasonOverlay">
+  <canvas id="seasonCanvas"></canvas>
+  <div class="ov-content">
+    <div class="ov-num"></div>
+    <div class="ov-name"></div>
+    <div class="ov-emoji"></div>
+  </div>
+</div>
+
+<div class="expview" id="expv">
+  <div class="exphdr">
+    <div class="exphdr-left">
+      <span class="expnum" id="enum"></span>
+      <span class="expname" id="ename"></span>
+    </div>
+    <div class="exphdr-actions">
+      <span class="expmeta" id="emeta"></span>
+      <button id="exp-upload-btn" class="upload-btn ripR">
+        <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Add Photos
+      </button>
+      <button class="closebtn ripR" id="closeExpBtn">&#8592; Seasons</button>
+    </div>
+  </div>
+  <div class="exphero">
+    <img id="ehimg" src="" alt="">
+    <div class="expgrad"></div>
+    <div class="exptxt">
+      <div class="expbar" id="ebar"></div>
+      <h2 class="expbig"><em id="ebigtitle"></em></h2>
+      <p class="expsub" id="esub"></p>
+    </div>
+  </div>
+  <div class="masonry" id="ephotos"></div>
+  <div class="seanav">
+    <button class="snbtn ripR" id="sprev">
+      <img class="snthumb" id="pthmb" src="" alt="">
+      <span>&#8592; Prev</span>
+    </button>
+    <button class="vallbtn ripR" id="vallBtn">All Seasons</button>
+    <button class="snbtn ripR" id="snext">
+      <span>Next &#8594;</span>
+      <img class="snthumb" id="nthmb" src="" alt="">
+    </button>
+  </div>
+</div>
+<nav id="nav">
+  <a href="/" class="logo">Her <span class="pk">Universe</span> ✨</a>
+  <button class="nav-hamburger" id="navHam" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-desktop-links">
+    <ul class="navlinks"><li><a href="/">Home</a></li>
+    <li><a href="/gallery" class="on">Gallery</a></li>
+    <li><a href="/about">About Her</a></li></ul>
+    <a href="/" class="nbtn ripR">← Home</a>
+  </div>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <ul class="navlinks"><li><a href="/">Home</a></li>
+    <li><a href="/gallery" class="on">Gallery</a></li>
+    <li><a href="/about">About Her</a></li></ul>
+  <a href="/" class="nbtn ripR" onclick="closeNav()">← Home</a>
+</div>
+<section class="hero">
+  <div class="hbg"><img src="https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=1600&h=600&fit=crop&q=80" alt=""></div>
+  <div class="hgrad"></div>
+  <div class="hinner">
+    <p class="htag">Two Hundred Moments</p>
+    <h1 class="htitle">The <em>Gallery</em></h1>
+    <p class="hsub">Six seasons · Tap any season to explore</p>
+  </div>
+  <div class="pctr">200</div>
+</section>
+
+<div class="galwrap rv">
+  <div class="galintr">
+    <p>Tap a season · Use Upload to add your photos</p>
+    <span class="galtot">200 photographs · six seasons</span>
+  </div>
+  <div class="seagrid" id="sgrid">
+    <div class="seacard" ds="spring"><div class="cacc"></div>
+      <div class="cardimg" id="img0"><img src="https://images.unsplash.com/photo-1522748906645-95d8adfd52c7?w=700&h=500&fit=crop&q=80" alt="Spring Whispers"></div>
+      <div class="cardfoot"><div class="cnum">01 / 06</div><div class="cname">Spring Whispers</div><div class="ccnt">33 photographs</div>
+        <div class="card-actions">
+          <button class="ccta" id="explore0">Explore 🌷</button>
+          <button class="upload-btn ripR" id="upload0"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+        </div>
+      </div>
+    </div>
+    <div class="seacard" ds="summer"><div class="cacc"></div>
+      <div class="cardimg" id="img1"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=700&h=500&fit=crop&q=80" alt="Summer Radiance"></div>
+      <div class="cardfoot"><div class="cnum">02 / 06</div><div class="cname">Summer Radiance</div><div class="ccnt">34 photographs</div>
+        <div class="card-actions">
+          <button class="ccta" id="explore1">Explore ☀️</button>
+          <button class="upload-btn ripR" id="upload1"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+        </div>
+      </div>
+    </div>
+    <div class="seacard" ds="monsoon"><div class="cacc"></div>
+      <div class="cardimg" id="img2"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&h=500&fit=crop&q=80" alt="Monsoon Romance"></div>
+      <div class="cardfoot"><div class="cnum">03 / 06</div><div class="cname">Monsoon Romance</div><div class="ccnt">33 photographs</div>
+        <div class="card-actions">
+          <button class="ccta" id="explore2">Explore 🌧️</button>
+          <button class="upload-btn ripR" id="upload2"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+        </div>
+      </div>
+    </div>
+    <div class="seacard" ds="autumn"><div class="cacc"></div>
+      <div class="cardimg" id="img3"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&h=500&fit=crop&q=80" alt="Autumn Grace"></div>
+      <div class="cardfoot"><div class="cnum">04 / 06</div><div class="cname">Autumn Grace</div><div class="ccnt">34 photographs</div>
+        <div class="card-actions">
+          <button class="ccta" id="explore3">Explore 🍂</button>
+          <button class="upload-btn ripR" id="upload3"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+        </div>
+      </div>
+    </div>
+    <div class="seacard" ds="winter"><div class="cacc"></div>
+      <div class="cardimg" id="img4"><img src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?w=700&h=500&fit=crop&q=80" alt="Winter Glow"></div>
+      <div class="cardfoot"><div class="cnum">05 / 06</div><div class="cname">Winter Glow</div><div class="ccnt">33 photographs</div>
+        <div class="card-actions">
+          <button class="ccta" id="explore4">Explore ❄️</button>
+          <button class="upload-btn ripR" id="upload4"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+        </div>
+      </div>
+    </div>
+    <div class="seacard" ds="golden"><div class="cacc"></div>
+      <div class="cardimg" id="img5"><img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=700&h=500&fit=crop&q=80" alt="Golden Hour"></div>
+      <div class="cardfoot"><div class="cnum">06 / 06</div><div class="cname">Golden Hour</div><div class="ccnt">33 photographs</div>
+        <div class="card-actions">
+          <button class="ccta" id="explore5">Explore ✨</button>
+          <button class="upload-btn ripR" id="upload5"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="flogo">Her <span class="pk">Universe</span> ✨</span>
+  <ul class="fnav"><li><a href="/">Home</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/about">About Her</a></li></ul>
+  <span class="fnote">200 photographs · 6 seasons · made with love 💕</span>
+</footer>
+
+<script src="/js/cursor.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/seasons.js"></script>
+<script src="/js/upload.js"></script>
+<script src="/js/gallery.js"></script>
+</body></html>
